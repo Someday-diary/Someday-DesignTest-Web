@@ -1,4 +1,4 @@
-# Someday team's Web Front-End Projects Template Repository.
+# Someday Design Test Web
 
 ### 커밋 메세지
 * feat: 새로운 기능에 대한 커밋
