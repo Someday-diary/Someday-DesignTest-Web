@@ -1,10 +1,15 @@
 import { Theme, useTheme } from "@emotion/react";
 import styled from "@emotion/styled";
 import Box from "src/components/common/Box";
+import { theme } from "src/core/styles/theme";
 import ScreenCapture from "../ScreenCapture";
 
 const BoxContainer = () => {
   const theme: Theme = useTheme();
+
+  const date: Date = new Date();
+
+  const now: string = `${date.getFullYear()}${date.getMonth()}${date.getDay()}${date.getHours()}${date.getMinutes()}${date.getSeconds()}`;
 
   const BoxValue = [
     {
@@ -76,13 +81,13 @@ const BoxContainer = () => {
     {
       id: 12,
       title: "405 × 30",
-      width: "150px",
+      width: "405px",
       backgroundColor: `${theme.colors.BGray22}`,
     },
     {
       id: 13,
       title: "320 × 30",
-      width: "150px",
+      width: "320px",
       backgroundColor: `${theme.colors.BGray13}`,
     },
     {
@@ -149,7 +154,7 @@ const BoxContainer = () => {
           );
         })}
       </BoxWrapper>
-      <ScreenCapture />
+      <ScreenCapture imageName={`Size_Test__${now}`} />
     </Container>
   );
 };
@@ -164,6 +169,7 @@ const Title = styled.div`
   font-family: Pretendard;
   font-weight: 600;
   font-size: 26px;
+  color: ${theme.colors.BGray22};
   margin-bottom: 8px;
 `;
 
@@ -171,6 +177,8 @@ const SubTitle = styled.div`
   font-family: Pretendard;
   font-weight: 400;
   font-size: 18px;
+  color: ${theme.colors.BGray30};
+  line-height: 26px;
   margin-bottom: 26px;
 `;
 

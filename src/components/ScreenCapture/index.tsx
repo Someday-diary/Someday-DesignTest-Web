@@ -2,11 +2,11 @@ import styled from "@emotion/styled";
 import html2canvas from "html2canvas";
 import Button from "../common/Button";
 
-const ScreenCapture = () => {
+const ScreenCapture = ({ imageName }: { imageName: string }) => {
   const onCapture = () => {
     const getElement: HTMLElement = document.body;
     html2canvas(getElement).then((canvas) => {
-      onSaveAs(canvas.toDataURL("image/png"), "image-download.png");
+      onSaveAs(canvas.toDataURL("image/png"), `${imageName}.png`);
     });
   };
 
@@ -27,6 +27,7 @@ const ScreenCapture = () => {
           fontWeight="600"
           image="/assets/Capture.png"
           onClick={() => onCapture()}
+          marginLeft="4px"
         />
       </ButtonWrapper>
     </Container>

@@ -9,7 +9,9 @@ interface Props {
   color?: string;
   backgroundColor?: string;
   fontWeight?: string;
+  marginLeft?: string;
   marginBottom?: string;
+  padding?: string;
 }
 
 const Button = ({
@@ -19,7 +21,9 @@ const Button = ({
   color,
   backgroundColor,
   fontWeight,
+  marginLeft,
   marginBottom,
+  padding,
 }: Props) => {
   return (
     <Container
@@ -29,20 +33,12 @@ const Button = ({
         backgroundColor: backgroundColor,
         fontSize: "18px",
         fontWeight: fontWeight,
-        marginBottom: marginBottom
+        marginBottom: marginBottom,
+        padding: padding,
       }}
     >
-      {image ? (
-        <Image
-          src={image}
-          width="22px"
-          height="22px"
-          style={{ marginRight: "2px" }}
-        />
-      ) : (
-        ""
-      )}
-      <Text>{text}</Text>
+      {image ? <Image src={image} width="22px" height="22px" /> : ""}
+      <Text marginLeft={marginLeft}>{text}</Text>
     </Container>
   );
 };
@@ -54,11 +50,11 @@ const Container = styled.div`
   text-align: center;
   border-radius: 19px;
   width: fit-content;
-  padding: 7px 16px 8px 12px;
   cursor: pointer;
 `;
 
-const Text = styled.span`
+const Text = styled.span<{ marginLeft?: string }>`
   position: relative;
   top: -3px;
+  margin-left: ${(props) => (props.marginLeft ? props.marginLeft : "")};
 `;

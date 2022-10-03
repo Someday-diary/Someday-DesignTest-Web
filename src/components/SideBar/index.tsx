@@ -39,7 +39,9 @@ const Sidebar = () => {
               data.active ? theme.colors.BGray94 : theme.colors.White
             }
             onClick={() => addActiveClass(data.id)}
+            marginLeft="2px"
             marginBottom="20px"
+            padding="7px 16px 8px 12px"
           />
         );
       })}
