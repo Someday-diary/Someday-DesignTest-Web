@@ -16,6 +16,7 @@ const GlobalStyle = css`
     margin: 0;
     overflow: auto;
     min-height: 100vh;
+    user-select: none;
   }
   a {
     color: inherit;
